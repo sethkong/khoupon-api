@@ -1,0 +1,11 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 50,
+    "max": 50
+  },
+  "nedb": "../data",
+  "mongodb": "mongodb://localhost:27017/khoupon_dev"
+}
