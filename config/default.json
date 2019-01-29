@@ -7,5 +7,29 @@
     "max": 50
   },
   "nedb": "../data",
-  "mongodb": "mongodb://localhost:27017/khoupon_dev"
+  "mongodb": "mongodb://localhost:27017/khoupon_dev",
+  "authentication": {
+    "secret": "8ed31f9507abe0ce1e16b088cdf3e02deafaf628800c80ac15f74988792a2df2ea871b937d3b6e9237b8a40735540adf415f7b49977b8964a220d0637fe3c634bb10b2a3bb6d36e9933cd0dbfcdc3c452061ba8b1cefcfa24cb13b899d46ea446185de22bf2b1a57ee7b05dd3d118496b4522e9ce54a31418c4b2a76023cb01edd0dd600b73ad61f750fde403c9deb7168dbd8f486432a2b6a1f67337d47409d055acea1aa70c9d27795c3d283aa0157eb55467f6519df7a6bde2c9dbc2db4556ecfd0cd5321a5c392e6f5f6a5bb606fb77287087dd25d4612112653c3b85c96e4ab5c4c2f6694bd9f17e9cc264300e37f530a98d7b43dad00c6d0fb3526d4f3",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    }
+  }
 }
